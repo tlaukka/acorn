@@ -1,0 +1,130 @@
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <script src="lib/easeljs-0.8.2.min.js"></script>
+    <script src="lib/tweenjs-0.6.2.min.js"></script>
+    <script src="lib/preloadjs-0.6.2.min.js"></script>
+    <script src="main.js"></script>
+    <script src="game.js"></script>
+    <style type="text/css">
+      #game {
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
+
+      #menu {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 768px;
+        height: 738px;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+      }
+
+      .options {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 404px;
+        margin-top: 300px;
+        border-radius: 4px;
+        padding: 24px;
+        border: 4px solid #000000;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .controls {
+        text-align: center;
+      }
+
+    	#canvas {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0 auto;
+        background-color: #cccccc;
+    	}
+
+      .info {
+        font-family: "Arial";
+        font-size: 16px;
+        text-align: center;
+        color: #eeeeee;
+        margin-bottom: 12px;
+      }
+
+      .control {
+        border-radius: 4px;
+      }
+
+      .control:hover {
+        -webkit-box-shadow: 0px 0px 4px 2px rgba(207,207,207,1);
+        -moz-box-shadow: 0px 0px 4px 2px rgba(207,207,207,1);
+        box-shadow: 0px 0px 4px 2px rgba(207,207,207,1);
+      }
+
+      .btn {
+        font-family: "Arial";
+        color: #ffffff;
+        font-size: 20px;
+        border: 0;
+        width: 200px;
+        height: 48px;
+        background: url("./images/BtnWinning.png") no-repeat;
+
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+      }
+
+      #winnings {
+        background-color: #b59b96;
+        border: 4px solid #48332c;
+        border-radius: 4px;
+        width: 200px;
+        height: 48px;
+        font-size: 18px;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      #round-winnings {
+        visibility: hidden;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 404px;
+        height: 32px;
+        margin-top: 180px;
+        border-radius: 4px;
+        padding: 24px;
+        border: 4px solid #000000;
+        background-color: rgba(0, 0, 0, 0.6);
+        font-family: "Arial";
+        font-size: 28px;
+        text-align: center;
+        color: #eeeeee;
+      }
+    </style>
+  </head>
+  <body onload="init()">
+    <div id="game">
+      <div id="menu">
+        <div id="round-winnings"></div>
+        <div class="options">
+          <div class="info">Valitse voittosumma ja klikkaa "Aloita peli"</div>
+          <div class="controls">
+            <select id="winnings" class="control">
+            </select>
+            <button type="buton" class="control btn" onclick="start()">Aloita peli</button>
+          </div>
+        </div>
+      </div>
+      <canvas id="canvas" width="768" height="738"></canvas>
+    </div>
+  </body>
+</html>
